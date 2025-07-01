@@ -43,8 +43,8 @@ const DeliveryDashboard = ({ activeTab }) => {
             try {
                 // Determine the endpoint based on the active tab
                 const endpoint = activeTab === 'pickup' 
-                    ? 'http://localhost:5000/api/delivery/pickup' 
-                    : 'http://localhost:5000/api/delivery/deliver';
+                    ? 'https://logistics-website-67n1.onrender.com/api/delivery/pickup' 
+                    : 'https://logistics-website-67n1.onrender.com/api/delivery/deliver';
                 
                 const response = await fetch(endpoint);
                 if (response.ok) {
@@ -66,7 +66,7 @@ const DeliveryDashboard = ({ activeTab }) => {
 
     const handleStatusChange = async (orderId, newStatus) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/admin/orders/${orderId}/status`, {
+            const response = await fetch(`https://logistics-website-67n1.onrender.com/api/admin/orders/${orderId}/status`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ status: newStatus }),

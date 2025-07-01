@@ -48,7 +48,7 @@ const Header = (props) => {
             return;
         }
         try {
-            const res = await fetch('http://localhost:5000/api/login', {
+            const res = await fetch('https://logistics-website-67n1.onrender.com/api/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(loginForm),
@@ -79,7 +79,7 @@ const Header = (props) => {
             return;
         }
         try {
-            const res = await fetch('http://localhost:5000/api/signup', {
+            const res = await fetch('https://logistics-website-67n1.onrender.com/api/signup', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name: signupForm.name, email: signupForm.email, password: signupForm.password }),

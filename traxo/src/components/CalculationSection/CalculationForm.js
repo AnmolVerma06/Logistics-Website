@@ -103,7 +103,7 @@ const CalculationForm = (props) => {
         setLoading(true);
         try {
             // Just use the city value directly
-            const response = await fetch('http://localhost:5000/api/calculate-distance', {
+            const response = await fetch('https://logistics-website-67n1.onrender.com/api/calculate-distance', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

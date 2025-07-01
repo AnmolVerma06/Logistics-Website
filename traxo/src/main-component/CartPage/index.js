@@ -50,7 +50,7 @@ const CartPage = (props) => {
       setShippingCost(null);
       return;
     }
-    fetch('http://localhost:5000/api/calculate-with-cart', {
+    fetch('https://logistics-website-67n1.onrender.com/api/calculate-with-cart', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ 

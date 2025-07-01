@@ -181,7 +181,7 @@ const OrderRecivedSec = ({cartList}) => {
 
         const saveOrder = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/save-order', {
+                const response = await fetch('https://logistics-website-67n1.onrender.com/api/save-order', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(orderData)

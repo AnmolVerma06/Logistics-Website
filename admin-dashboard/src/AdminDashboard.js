@@ -19,7 +19,7 @@ const AdminDashboard = ({ activeTab }) => {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/admin/orders');
+                const response = await fetch('https://logistics-website-67n1.onrender.com/api/admin/orders');
                 if (response.ok) {
                     const data = await response.json();
                     setOrders(data);
@@ -33,7 +33,7 @@ const AdminDashboard = ({ activeTab }) => {
 
         const fetchUsers = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/admin/users');
+                const response = await fetch('https://logistics-website-67n1.onrender.com/api/admin/users');
                 if (response.ok) {
                     const data = await response.json();
                     setUsers(data);
@@ -47,7 +47,7 @@ const AdminDashboard = ({ activeTab }) => {
 
         const fetchContactMessages = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/contact-messages');
+                const response = await fetch('https://logistics-website-67n1.onrender.com/api/contact-messages');
                 if (response.ok) {
                     const data = await response.json();
                     setContactMessages(data);
@@ -74,7 +74,7 @@ const AdminDashboard = ({ activeTab }) => {
 
     const handleStatusChange = async (orderId, newStatus) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/admin/orders/${orderId}/status`, {
+            const response = await fetch(`https://logistics-website-67n1.onrender.com/api/admin/orders/${orderId}/status`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
