@@ -27,8 +27,7 @@ const TrackingPage = (props) => {
                     </div>
                 </div>
             </section>
-            <SubscribeSectionS2 />
-            <Footer hclass={'wpo-site-footer-s3'} NewsletterShow={false} InstagramShow={true} FooterShape={false} />
+            <Footer hclass={'wpo-site-footer'} upperContactArea={true} />
             <Scrollbar />
         </Fragment>
     )
