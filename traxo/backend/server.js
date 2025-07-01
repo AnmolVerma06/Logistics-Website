@@ -14,7 +14,10 @@ const PORT = process.env.PORT || 5000;
 const JWT_SECRET = 'your_jwt_secret'; // Change this in production
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: ['https://logistics-website-delivery-agent-app.onrender.com'],
+  credentials: true, // Optional: needed if you're sending cookies or auth headers
+}));
 app.use(express.json());
 
 // MongoDB connection
