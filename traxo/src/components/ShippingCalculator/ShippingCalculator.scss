@@ -1,0 +1,377 @@
+.shipping-calculator {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    margin: 1rem 0;
+    border: 1px solid #e8e8e8;
+
+    .calculator-header {
+        text-align: center;
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 2px solid #f0f0f0;
+
+        h3 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+    }
+
+    .calculator-form {
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+
+            @media (max-width: 768px) {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            // Single column layout for delivery option
+            &:last-of-type {
+                grid-template-columns: 1fr;
+                max-width: 50%;
+                margin: 0 auto 1.5rem auto;
+
+                @media (max-width: 768px) {
+                    max-width: 100%;
+                }
+            }
+        }
+
+        .form-group {
+            label {
+                display: block;
+                margin-bottom: 0.5rem;
+                font-weight: 500;
+                color: #2c3e50;
+                font-size: 0.9rem;
+            }
+
+            .form-control {
+                width: 100%;
+                padding: 0.75rem 1rem;
+                border: 2px solid #e8e8e8;
+                border-radius: 8px;
+                font-size: 0.95rem;
+                transition: all 0.3s ease;
+                background: #ffffff;
+
+                &:focus {
+                    outline: none;
+                    border-color: #3498db;
+                    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+                }
+
+                &:hover {
+                    border-color: #bdc3c7;
+                }
+            }
+
+            &.checkbox-group {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+
+                .checkbox-label {
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    font-weight: 500;
+                    color: #2c3e50;
+                    font-size: 0.9rem;
+                    margin: 0;
+
+                    input[type="checkbox"] {
+                        display: none;
+                    }
+
+                    .checkmark {
+                        width: 20px;
+                        height: 20px;
+                        border: 2px solid #e8e8e8;
+                        border-radius: 4px;
+                        margin-right: 0.75rem;
+                        position: relative;
+                        transition: all 0.3s ease;
+                        background: #ffffff;
+
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            left: 6px;
+                            top: 2px;
+                            width: 6px;
+                            height: 10px;
+                            border: solid #ffffff;
+                            border-width: 0 2px 2px 0;
+                            transform: rotate(45deg);
+                            opacity: 0;
+                            transition: opacity 0.3s ease;
+                        }
+                    }
+
+                    input[type="checkbox"]:checked + .checkmark {
+                        background: #3498db;
+                        border-color: #3498db;
+
+                        &:after {
+                            opacity: 1;
+                        }
+                    }
+
+                    &:hover .checkmark {
+                        border-color: #3498db;
+                    }
+                }
+            }
+        }
+
+        .cart-summary {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid #e9ecef;
+
+            h4 {
+                color: #2c3e50;
+                font-size: 1.1rem;
+                font-weight: 600;
+                margin-bottom: 1rem;
+                text-align: center;
+            }
+
+            .summary-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1rem;
+
+                .summary-item {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 0.75rem;
+                    background: #ffffff;
+                    border-radius: 6px;
+                    border: 1px solid #e9ecef;
+
+                    span:first-child {
+                        font-weight: 500;
+                        color: #6c757d;
+                        font-size: 0.9rem;
+                    }
+
+                    span:last-child {
+                        font-weight: 600;
+                        color: #2c3e50;
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+
+        .form-actions {
+            text-align: center;
+            margin: 2rem 0;
+
+            .calculate-btn {
+                background: linear-gradient(135deg, #3498db, #2980b9);
+                color: #ffffff;
+                border: none;
+                padding: 1rem 2.5rem;
+                border-radius: 8px;
+                font-size: 1rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+
+                &:hover:not(:disabled) {
+                    transform: translateY(-2px);
+                    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+                }
+
+                &:disabled {
+                    background: #bdc3c7;
+                    cursor: not-allowed;
+                    transform: none;
+                    box-shadow: none;
+                }
+
+                &:active:not(:disabled) {
+                    transform: translateY(0);
+                }
+            }
+        }
+
+        .error-message {
+            background: #fee;
+            color: #c53030;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #fed7d7;
+            margin: 1rem 0;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .shipping-breakdown {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            border: 1px solid #e9ecef;
+
+            h4 {
+                color: #2c3e50;
+                font-size: 1.1rem;
+                font-weight: 600;
+                margin-bottom: 1.5rem;
+                text-align: center;
+                border-bottom: 2px solid #e9ecef;
+                padding-bottom: 0.75rem;
+            }
+
+            .breakdown-grid {
+                display: grid;
+                gap: 0.75rem;
+
+                .breakdown-item {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 0.75rem 1rem;
+                    background: #ffffff;
+                    border-radius: 6px;
+                    border: 1px solid #e9ecef;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                    }
+
+                    span:first-child {
+                        font-weight: 500;
+                        color: #6c757d;
+                        font-size: 0.9rem;
+                    }
+
+                    span:last-child {
+                        font-weight: 600;
+                        color: #2c3e50;
+                        font-size: 0.9rem;
+                    }
+
+                    &.subtotal {
+                        background: #e3f2fd;
+                        border-color: #2196f3;
+                        
+                        span:first-child {
+                            color: #1976d2;
+                        }
+                        
+                        span:last-child {
+                            color: #1976d2;
+                        }
+                    }
+
+                    &.gst {
+                        background: #fff3e0;
+                        border-color: #ff9800;
+                        
+                        span:first-child {
+                            color: #f57c00;
+                        }
+                        
+                        span:last-child {
+                            color: #f57c00;
+                        }
+                    }
+
+                    &.total {
+                        background: #e8f5e8;
+                        border-color: #4caf50;
+                        font-size: 1.1rem;
+                        
+                        span:first-child {
+                            color: #2e7d32;
+                            font-weight: 600;
+                        }
+                        
+                        span:last-child {
+                            color: #2e7d32;
+                            font-weight: 700;
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+    .shipping-calculator {
+        padding: 1.5rem;
+        margin: 0.5rem 0;
+
+        .calculator-header {
+            h3 {
+                font-size: 1.3rem;
+            }
+        }
+
+        .calculator-form {
+            .form-row {
+                grid-template-columns: 1fr;
+
+                &:last-of-type {
+                    max-width: 100%;
+                }
+            }
+
+            .cart-summary {
+                .summary-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .form-actions {
+                .calculate-btn {
+                    width: 100%;
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+}
+
+// Animation for loading state
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.calculate-btn:disabled {
+    animation: pulse 1.5s infinite;
+} 

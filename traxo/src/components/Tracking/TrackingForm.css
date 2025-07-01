@@ -1,0 +1,38 @@
+.order-details-wrapper {
+    margin-top: 2rem;
+    padding: 2rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.order-details-wrapper h3 {
+    margin-top: 0;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.order-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.order-details-grid p {
+    margin: 0.5rem 0;
+}
+
+.status-label {
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.status-confirmed { background-color: #1890ff; }
+.status-picked-up { background-color: #13c2c2; }
+.status-shipped { background-color: #faad14; }
+.status-in-transit { background-color: #722ed1; }
+.status-out-for-delivery { background-color: #eb2f96; }
+.status-delivered { background-color: #52c41a; } 

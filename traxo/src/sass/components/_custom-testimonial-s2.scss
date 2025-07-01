@@ -1,0 +1,168 @@
+.wpo-testimonial-section-s2 {
+    padding: 100px 0;
+    background: #f7f7f7;
+
+    .wpo-testimonial-right {
+        position: relative;
+
+        .section-title {
+            margin-bottom: 40px;
+        }
+
+        .slider-controls {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            pointer-events: none;
+
+            button {
+                background: #fff;
+                border: 1px solid #eee;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+                pointer-events: auto;
+                transition: all 0.3s ease;
+                margin-left: 10px;
+
+                &:hover {
+                    background: #ffc107;
+                    color: #fff;
+                    border-color: #ffc107;
+                }
+
+                i {
+                    font-size: 20px;
+                    color: #333;
+                }
+            }
+        }
+    }
+
+    .testimonial-slider-container {
+        position: relative;
+        overflow: hidden;
+        padding: 20px 0;
+    }
+
+    .testimonial-slider-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+    }
+
+    .wpo-testimonial-item {
+        flex-shrink: 0;
+        padding: 0 15px;
+        box-sizing: border-box;
+
+        @media (min-width: 992px) {
+            flex: 0 0 50% !important;
+            max-width: 50% !important;
+        }
+        @media (max-width: 991px) {
+            flex: 0 0 100% !important;
+            max-width: 100% !important;
+        }
+    }
+
+    .wpo-testimonial-slide {
+        background: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .wpo-testimonial-slide-inner {
+            ul {
+                list-style: none;
+                margin-bottom: 20px;
+
+                li {
+                    display: inline-block;
+                    color: #ffc107;
+                    margin-right: 5px;
+                }
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 1.8;
+                color: #666;
+                margin-bottom: 20px;
+            }
+        }
+
+        .wpo-testimonial-client {
+            display: flex;
+            align-items: center;
+
+            .wpo-testimonial-client-img {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                overflow: hidden;
+                margin-right: 15px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .wpo-testimonial-client-text {
+                h4 {
+                    font-size: 18px;
+                    margin-bottom: 5px;
+                    color: #333;
+                }
+
+                span {
+                    font-size: 14px;
+                    color: #666;
+                }
+            }
+        }
+    }
+
+    .slider-dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ddd;
+            border: none;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &.active {
+                background: #ffc107;
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    @media (max-width: 991px) {
+        .slider-controls {
+            display: none;
+        }
+    }
+} 
