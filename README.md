@@ -62,10 +62,15 @@ The shipping cost is calculated dynamically using the following steps:
 
 4. **Add-Ons and Surcharges**  
    - Express delivery and insurance add fixed surcharges.
+     
+5. **Freight Type Adjustments**
+   - **Road** and **Rail** have the standard calculated price.
+   - **Ocean Freight** (available for coastal cities) adds a surcharge of ₹500.
+   - **Air Freight** adds a surcharge of ₹2,000.
 
-5. **Total Cost**  
+6. **Total Cost**  
    ```
-   Shipping Price = (Base Rate × Chargeable Weight) + Add-ons
+   Shipping Price = (Base Rate × Chargeable Weight) + Freight Surcharge + Add-ons + GST
    ```
 
 ---
@@ -133,22 +138,6 @@ Expiry Date: 11/26
    - Shipment Website: http://localhost:3000
    - Admin Dashboard: http://localhost:3001
    - Delivery Agent App: http://localhost:3002
-
----
-
-## 📦 Future Improvements
-
-- Real-time order status updates for customers and delivery agents.
-- Push notifications for order updates.
-- Enhanced analytics in admin dashboard.
-- Integration with live distance APIs like Google Maps.
-- Automated tracking updates.
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
 
 ---
 
