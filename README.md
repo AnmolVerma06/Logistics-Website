@@ -101,7 +101,7 @@ The application dynamically calculates pickup and estimated delivery dates based
 
 To test the payment flow,
 
-###Card details:
+### Card details:
 ```
 Mastercard Card Number: 5267 3181 8797 5449
 Visa Car Number : 4386 2894 0766 0153
@@ -110,13 +110,13 @@ Expiry Date: 11/26  (Any Future date)
 
 ```
 
-###UPI Details (Click Success)  - 
+### UPI Details (Click Success)  - 
 
 ```
 success@razorpay 
 ```
 
-###Net Banking - 
+### Net Banking - 
 
 ```
 Choose a Bank -> Click Pay -> Success
