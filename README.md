@@ -80,12 +80,12 @@ The shipping cost is calculated dynamically using the following steps:
 The application dynamically calculates pickup and estimated delivery dates based on the shipping speed and freight type:
 
 ### 🚚 Pickup Date Logic
-- **Express Shipping** (`shippingCost.addOns?.expressCharge > 0`):  
+- **Express Shipping**:  
   - Pickup date is set to **today**.
 - **Standard Shipping**:  
   - Pickup date is set to **tomorrow**.
-  - If tomorrow is **Sunday** (`getDay() === 0`), pickup moves to **Monday**.
-  - If tomorrow is **Saturday** (`getDay() === 6`), pickup also moves to **Monday** (i.e., pickup is delayed by two days).
+  - If tomorrow is **Sunday**, pickup moves to **Monday**.
+  - If tomorrow is **Saturday**, pickup also moves to **Monday** (i.e., pickup is delayed by two days).
 
 ### 📦 Delivery Date Logic
 - **Air Freight** (`freightCharge === 2000`):
@@ -99,17 +99,27 @@ The application dynamically calculates pickup and estimated delivery dates based
 
 ## 🔐 Sample Payment Details (Razorpay Test Mode)
 
-To test the payment flow, use these card details:
+To test the payment flow,
+
+###Card details:
 ```
-Card Details - 
 Mastercard Card Number: 5267 3181 8797 5449
 Visa Car Number : 4386 2894 0766 0153
 CVV: 123  (Random CVV)
 Expiry Date: 11/26  (Any Future date)
 
-UPI - success@razorpay
+```
 
-Net Banking - Choose a Bank -> Click Pay
+###UPI Details (Click Success)  - 
+
+```
+success@razorpay 
+```
+
+###Net Banking - 
+
+```
+Choose a Bank -> Click Pay -> Success
 ```
 
 ---
