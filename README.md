@@ -181,12 +181,14 @@ Choose a Bank -> Click Pay
 
 ---
 
+These are some screenshots of Admin-Dashboard and Delivery-Partner-Dashboard
+
 <p align="center">
-  <img src="docs/images/screenshot-1.png" width="200"/>
-  <img src="docs/images/screenshot-2.png" width="200"/>
-  <img src="docs/images/screenshot-3.png" width="200"/>
-  <img src="docs/images/screenshot-4.png" width="200"/>
-  <img src="docs/images/screenshot-5.png" width="200"/>
+  <img src="images/screenshot-1.png" width="200"/>
+  <img src="images/screenshot-2.png" width="200"/>
+  <img src="images/screenshot-3.png" width="200"/>
+  <img src="images/screenshot-4.png" width="200"/>
+  <img src="images/screenshot-5.png" width="200"/>
 </p>
 
 ---
