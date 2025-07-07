@@ -89,7 +89,7 @@ The application dynamically calculates pickup and estimated delivery dates based
   - If tomorrow is **Saturday**, pickup also moves to **Monday** (i.e., pickup is delayed by two days).
 
 ### 📦 Delivery Date Logic
-- **Air Freight** (`freightCharge === 2000`):
+- **Air Freight**:
   - **Express**: Delivery is on the **same day as pickup**.
   - **Standard**: Delivery is **one day after pickup**.
 - **Road or Rail Freight** (any other freight charge):
@@ -140,7 +140,7 @@ Choose a Bank -> Click Pay
 
 ## 🛠️ Technologies Used
 
-- **Frontend**: React.js, Tailwind CSS
+- **Frontend**: React.js, Custom CSS, Bootstrap, SCSS
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 - **Payment Gateway**: Razorpay
