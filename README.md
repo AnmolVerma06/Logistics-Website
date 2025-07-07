@@ -147,6 +147,22 @@ Choose a Bank -> Click Pay
 
 ---
 
+## ⚠️Note - These are some screenshots of Admin-Dashboard and Delivery-Partner-Dashboard:
+
+<p align="center">
+  <img src="images/Screenshot-1.png" width="200"/>
+  <img src="images/Screenshot-2.png" width="200"/>
+  <img src="images/Screenshot-3.png" width="200"/>
+</p>
+
+<p align="center">
+  <img src="images/Screenshot-4.png" width="200"/>
+  <img src="images/Screenshot-5.png" width="200"/>
+  <img src="images/Screenshot-6.png" width="200"/>
+</p>
+
+---
+
 ## ✅ Getting Started
 
 1. **Clone the repository**
@@ -179,21 +195,6 @@ Choose a Bank -> Click Pay
    - Admin Dashboard: http://localhost:3001
    - Delivery Agent App: http://localhost:3002
 
----
-
-### ⚠️Note - These are some screenshots of Admin-Dashboard and Delivery-Partner-Dashboard:
-
-<p align="center">
-  <img src="images/Screenshot-1.png" width="200"/>
-  <img src="images/Screenshot-2.png" width="200"/>
-  <img src="images/Screenshot-3.png" width="200"/>
-</p>
-
-<p align="center">
-  <img src="images/Screenshot-4.png" width="200"/>
-  <img src="images/Screenshot-5.png" width="200"/>
-  <img src="images/Screenshot-6.png" width="200"/>
-</p>
 ---
 
 ## 🙌 Acknowledgements
