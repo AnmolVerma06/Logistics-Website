@@ -110,6 +110,7 @@ Expiry Date: 11/26
 
 ## 📂 Repository Structure
 
+```
 ├── admin-dashboard/          # React app for admin interface
 ├── delivery-agent-app/       # React app for delivery agent dashboard
 ├── traxo/                    # Main customer app + backend
@@ -117,7 +118,7 @@ Expiry Date: 11/26
 │   └── [main app files]      # React customer-facing shipment website
 ├── .gitignore                # Git ignore file
 └── README.md                 # Project documentation
-
+```
 ---
 
 ## 🛠️ Technologies Used
