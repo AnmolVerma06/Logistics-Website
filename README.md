@@ -99,7 +99,7 @@ The application dynamically calculates pickup and estimated delivery dates based
 
 ## 🔐 Sample Payment Details (Razorpay Test Mode)
 
-To test the payment flow,
+To test the payment flow, click Success after selecting the payment method
 
 ### Card details:
 ```
@@ -110,7 +110,7 @@ Expiry Date: 11/26  (Any Future date)
 
 ```
 
-### UPI Details (Click Success)  - 
+### UPI Details  - 
 
 ```
 success@razorpay 
@@ -119,7 +119,7 @@ success@razorpay
 ### Net Banking - 
 
 ```
-Choose a Bank -> Click Pay -> Success
+Choose a Bank -> Click Pay
 ```
 
 ---
