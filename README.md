@@ -150,7 +150,7 @@ Expiry Date: 11/26
 4. **Run the apps locally**
    - Start the backend server:
      ```bash
-     npm start
+     npm run dev
      ```
    - In separate terminals, run the three React apps:
      ```bash
