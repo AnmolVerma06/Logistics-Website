@@ -27,6 +27,7 @@ A comprehensive logistics shipment platform built with React, Node.js, and Mongo
 - Orders placed by users are initially marked **Confirmed** and appear in both the admin and delivery agent dashboards.
 - Search functionality to quickly find orders by order ID or customer details.
 - View messages from the contact form.
+- View and manage signed-in users for future promotional messages or marketing outreach.
 
 ### 🚚 Delivery Agent App
 - Delivery agents can:
