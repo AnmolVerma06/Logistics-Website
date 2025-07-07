@@ -27,6 +27,7 @@ A comprehensive logistics shipment platform built with React, Node.js, and Mongo
 - Orders placed by users are initially marked **Confirmed** and appear in both the admin and delivery agent dashboards.
 - Search functionality to quickly find orders by order ID or customer details.
 - View messages from the contact form.
+- View and manage signed-in users for future promotional messages or marketing outreach.
 
 ### 🚚 Delivery Agent App
 - Delivery agents can:
@@ -80,15 +81,15 @@ The shipping cost is calculated dynamically using the following steps:
 The application dynamically calculates pickup and estimated delivery dates based on the shipping speed and freight type:
 
 ### 🚚 Pickup Date Logic
-- **Express Shipping** (`shippingCost.addOns?.expressCharge > 0`):  
+- **Express Shipping**:  
   - Pickup date is set to **today**.
 - **Standard Shipping**:  
   - Pickup date is set to **tomorrow**.
-  - If tomorrow is **Sunday** (`getDay() === 0`), pickup moves to **Monday**.
-  - If tomorrow is **Saturday** (`getDay() === 6`), pickup also moves to **Monday** (i.e., pickup is delayed by two days).
+  - If tomorrow is **Sunday**, pickup moves to **Monday**.
+  - If tomorrow is **Saturday**, pickup also moves to **Monday** (i.e., pickup is delayed by two days).
 
 ### 📦 Delivery Date Logic
-- **Air Freight** (`freightCharge === 2000`):
+- **Air Freight**:
   - **Express**: Delivery is on the **same day as pickup**.
   - **Standard**: Delivery is **one day after pickup**.
 - **Road or Rail Freight** (any other freight charge):
@@ -99,11 +100,27 @@ The application dynamically calculates pickup and estimated delivery dates based
 
 ## 🔐 Sample Payment Details (Razorpay Test Mode)
 
-To test the payment flow, use these card details:
+To test the payment flow, click Success after selecting the payment method
+
+### Card details:
 ```
-Card Number: 4111 1111 1111 1111  
-CVV: 123  
-Expiry Date: 11/26  
+Mastercard Card Number: 5267 3181 8797 5449
+Visa Car Number : 4386 2894 0766 0153
+CVV: 123  (Random CVV)
+Expiry Date: 11/26  (Any Future date)
+
+```
+
+### UPI Details  - 
+
+```
+success@razorpay 
+```
+
+### Net Banking - 
+
+```
+Choose a Bank -> Click Pay
 ```
 
 ---
@@ -123,7 +140,7 @@ Expiry Date: 11/26
 
 ## 🛠️ Technologies Used
 
-- **Frontend**: React.js, Tailwind CSS
+- **Frontend**: React.js, Custom CSS, Bootstrap, SCSS
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 - **Payment Gateway**: Razorpay
