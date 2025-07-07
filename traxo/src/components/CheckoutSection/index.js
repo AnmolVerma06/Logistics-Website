@@ -56,7 +56,7 @@ const receiverFields = [
     'fname2', 'lname2', 'country2', 'dristrict2', 'address2', 'post_code2', 'email2', 'phone2'
 ];
 
-const RAZORPAY_KEY = 'rzp_test_45KjxdqPyredPs';
+const RAZORPAY_KEY = 'rzp_test_Nw21d3bmFaOOK5';
 
 const CheckoutSection = ({ cartList }) => {
     // states
