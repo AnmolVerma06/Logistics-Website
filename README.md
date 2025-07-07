@@ -101,9 +101,15 @@ The application dynamically calculates pickup and estimated delivery dates based
 
 To test the payment flow, use these card details:
 ```
-Card Number: 4111 1111 1111 1111  
-CVV: 123  
-Expiry Date: 11/26  
+Card Details - 
+Mastercard Card Number: 5267 3181 8797 5449
+Visa Car Number : 4386 2894 0766 0153
+CVV: 123  (Random CVV)
+Expiry Date: 11/26  (Any Future date)
+
+UPI - success@razorpay
+
+Net Banking - Choose a Bank -> Click Pay
 ```
 
 ---
