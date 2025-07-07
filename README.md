@@ -50,8 +50,8 @@ A comprehensive logistics shipment platform built with React, Node.js, and Mongo
 The shipping cost is calculated dynamically using the following steps:
 
 1. **Distance-Based Pricing**  
-   - A pre-calculated distance matrix determines the distance between major Indian cities.
-   - Shipping cost scales with distance.
+   - Distances between major Indian cities are calculated using the **Haversine formula**, which computes the great-circle distance between two latitude-longitude points.
+   - Shipping cost scales with the calculated distance.
 
 2. **Weight Calculation**  
    - Both actual weight and volumetric weight (based on selected box dimensions) are calculated.
@@ -60,19 +60,41 @@ The shipping cost is calculated dynamically using the following steps:
 3. **Base Rate**  
    - A base rate per kilogram applies and varies with distance.
 
-4. **Add-Ons and Surcharges**  
-   - Express delivery and insurance add fixed surcharges.
-     
-5. **Freight Type Adjustments**
+4. **Freight Type Adjustments**
    - **Road** and **Rail** have the standard calculated price.
    - **Ocean Freight** (available for coastal cities) adds a surcharge of ₹500.
    - **Air Freight** adds a surcharge of ₹2,000.
+
+5. **Add-Ons and Surcharges**  
+   - Express delivery and insurance add fixed surcharges.
 
 6. **Total Cost**  
    ```
    Shipping Price = (Base Rate × Chargeable Weight) + Freight Surcharge + Add-ons + GST
    ```
 
+---
+
+## 📅 Pickup and Delivery Date Logic
+
+The application dynamically calculates pickup and estimated delivery dates based on the shipping speed and freight type:
+
+### 🚚 Pickup Date Logic
+- **Express Shipping** (`shippingCost.addOns?.expressCharge > 0`):  
+  - Pickup date is set to **today**.
+- **Standard Shipping**:  
+  - Pickup date is set to **tomorrow**.
+  - If tomorrow is **Sunday** (`getDay() === 0`), pickup moves to **Monday**.
+  - If tomorrow is **Saturday** (`getDay() === 6`), pickup also moves to **Monday** (i.e., pickup is delayed by two days).
+
+### 📦 Delivery Date Logic
+- **Air Freight** (`freightCharge === 2000`):
+  - **Express**: Delivery is on the **same day as pickup**.
+  - **Standard**: Delivery is **one day after pickup**.
+- **Road or Rail Freight** (any other freight charge):
+  - **Express**: Delivery is **2-3 days after pickup**.
+  - **Standard**: Delivery is **3-4 days after pickup**.
+    
 ---
 
 ## 🔐 Sample Payment Details (Razorpay Test Mode)
@@ -88,13 +110,13 @@ Expiry Date: 11/26
 
 ## 📂 Repository Structure
 
-```
-.
-├── shipment-website/          # Customer-facing React app
-├── admin-dashboard/           # Admin React app
-├── delivery-agent-app/        # Delivery agent React app
-└── backend/                   # Node.js/Express API with MongoDB
-```
+├── admin-dashboard/          # React app for admin interface
+├── delivery-agent-app/       # React app for delivery agent dashboard
+├── traxo/                    # Main customer app + backend
+│   ├── backend/              # Node.js/Express backend (API shared by all apps)
+│   └── [main app files]      # React customer-facing shipment website
+├── .gitignore                # Git ignore file
+└── README.md                 # Project documentation
 
 ---
 
