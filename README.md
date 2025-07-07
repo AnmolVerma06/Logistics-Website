@@ -12,7 +12,8 @@ A comprehensive logistics shipment platform built with React, Node.js, and Mongo
 ## 🚀 Features
 
 ### 🛒 User Flow (Main Website)
-- **Shipment Form**: Users provide personal details, departure and delivery cities, freight type, weight, insurance choice, and delivery speed (express or standard).
+- **Login/Signup Required**: Users must log in or sign up before applying for shipment. The React app includes authentication with form validations for secure account creation and login.
+- **Shipment Form**: Once logged in, users provide personal details, departure and delivery cities, freight type, weight, insurance choice, and delivery speed (express or standard).
 - **Box Selection**: Users pick an appropriate box based on parcel dimensions to account for weight vs. size discrepancies.
 - **Checkout**: Enter sender and receiver details.
 - **Payment Integration**: Seamless Razorpay payment integration (currently in test mode).
@@ -21,15 +22,18 @@ A comprehensive logistics shipment platform built with React, Node.js, and Mongo
 
 ### 🛠️ Admin Dashboard
 - View all orders with detailed information.
+- Change **order status** through predefined stages:
+  - **Confirmed**, **Picked Up**, **Shipped**, **In Transit**, **Out for Delivery**, **Delivered**.
+- Orders placed by users are initially marked **Confirmed** and appear in both the admin and delivery agent dashboards.
 - Search functionality to quickly find orders by order ID or customer details.
 - View messages from the contact form.
-- Login/signup functionality for admin authentication.
 
 ### 🚚 Delivery Agent App
 - Delivery agents can:
   - Select their city.
-  - View pickup and delivery orders specific to their assigned city.
-  - Mark orders as picked up/delivered (if implemented in future).
+  - View orders **to be picked up** or **to be delivered**, filtered by their assigned city.
+  - Mark orders as **Picked Up** or **Delivered**, updating the order status accordingly.
+- The dashboard presents two sections: **To be Picked Up** and **To be Delivered**, helping agents manage tasks efficiently.
 
 ---
 
